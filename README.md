@@ -45,8 +45,7 @@ define(['path/to/flight-component','path/to/flight-router'], function(defineComp
 ```js
 require(['path/to/flight-component-with-router'], function(component) {
     document.body.innerHTML = 'Click on body to change url and trigger handler \n \
-    Try to press BACK and FORWARD button and your listeners will fire
-    ';
+    Try to press BACK and FORWARD button and your listeners will fire';
     component.attachTo(document.body);
 });
 ```
