@@ -1,0 +1,17 @@
+{
+  "name": "flight-router",
+  "description" : "KISS URL Router mixin-component for twitter fligt framework",
+  "version": "0.5.0",
+  "author": "Vsevolod Ivanov",
+  "main": "lib/with_route.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "flight": "*"
+  }
+}
