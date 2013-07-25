@@ -5,50 +5,50 @@ You need to mixit it up with one of your components and you will be able to use 
 ## Usage example:
 ####Component with router
 '''javascript
-    define(['path/to/flight-component','path/to/flight-router'], function(defineComponent, router) {
-        return defineComponent(newComponent, router);
+define(['path/to/flight-component','path/to/flight-router'], function(defineComponent, router) {
+    return defineComponent(newComponent, router);
 
-        function newComponent() {
-            this.index = function() {
-                alert('INDEX');
-            };
-            this.basicHelp = function() {
-                alert('HELP');
-            };
-            this.helpWithParams = function(arg) {
-                alert(JSON.stringify(arg));
-            };
-            this.after('initialize', function() {
-                this.defineRoute({
-                    '/' : 'index', //Simple root listener
-                    '/help' : 'basicHelp', // Simple URL listener
-                    '/help/:article/:page' : 'helpWithParams', // Parametrized URL listener
-                    '/:pageType/:article/:page' : 'helpWithParams', // Will match any url like "/asd/wtf/123"
-                    '/help?:param=:value&:param2=:value2' : 'helpWithParams' // Will match get params
-                });
-                var counter = 0;
-                var index = [
-                    '/help',
-                    '/help/how-to-create-route/page2',
-                    '/FAQ/navigate/1',
-                    '/help?get=something&andMore=something:dotted'
-                ]
-                this.on('click', function() {
-                    this.navigate(index[counter]);
-                    counter++;
-                });
+    function newComponent() {
+        this.index = function() {
+            alert('INDEX');
+        };
+        this.basicHelp = function() {
+            alert('HELP');
+        };
+        this.helpWithParams = function(arg) {
+            alert(JSON.stringify(arg));
+        };
+        this.after('initialize', function() {
+            this.defineRoute({
+                '/' : 'index', //Simple root listener
+                '/help' : 'basicHelp', // Simple URL listener
+                '/help/:article/:page' : 'helpWithParams', // Parametrized URL listener
+                '/:pageType/:article/:page' : 'helpWithParams', // Will match any url like "/asd/wtf/123"
+                '/help?:param=:value&:param2=:value2' : 'helpWithParams' // Will match get params
             });
-        }
-    });
+            var counter = 0;
+            var index = [
+                '/help',
+                '/help/how-to-create-route/page2',
+                '/FAQ/navigate/1',
+                '/help?get=something&andMore=something:dotted'
+            ]
+            this.on('click', function() {
+                this.navigate(index[counter]);
+                counter++;
+            });
+        });
+    }
+});
 '''
 ####Initializing
 '''javascript
-    require(['path/to/flight-component-with-router'], function(component) {
-        document.body.innerHTML = 'Click on body to change url and trigger handler \n \
-        Try to press BACK and FORWARD button and your listeners will fire
-        ';
-        component.attachTo(document.body);
-    });
+require(['path/to/flight-component-with-router'], function(component) {
+    document.body.innerHTML = 'Click on body to change url and trigger handler \n \
+    Try to press BACK and FORWARD button and your listeners will fire
+    ';
+    component.attachTo(document.body);
+});
 '''
 
 ## Documentation
