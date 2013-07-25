@@ -4,7 +4,7 @@ You need to mixit it up with one of your components and you will be able to use 
 
 ## Usage example:
 ####Component with router
-'''javascript
+```js
 define(['path/to/flight-component','path/to/flight-router'], function(defineComponent, router) {
     return defineComponent(newComponent, router);
 
@@ -40,16 +40,16 @@ define(['path/to/flight-component','path/to/flight-router'], function(defineComp
         });
     }
 });
-'''
+```
 ####Initializing
-'''javascript
+```js
 require(['path/to/flight-component-with-router'], function(component) {
     document.body.innerHTML = 'Click on body to change url and trigger handler \n \
     Try to press BACK and FORWARD button and your listeners will fire
     ';
     component.attachTo(document.body);
 });
-'''
+```
 
 ## Documentation
 ### this.defineRoute(route, callback);
@@ -65,19 +65,19 @@ Like: this.defineRoute({'/', 'callback'});
 URL is url like string. Must start from '/'.
 Args is optional object with following params:
 
-'''javascript
+```js
     replaceState: Boolean
-'''
+```
 If passed state would not be pushed, but replaced, to save history clean.
 
-'''javascript
+```js
     data: Object
-'''
+```
 Data that would be passed to handlers AND state.
 
-'''javascript
+```js
     forced: Boolean
-'''
+```
 Param that tells fire new state any way even if URL is same.
 
 ####Use it
