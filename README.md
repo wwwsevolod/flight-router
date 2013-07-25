@@ -34,7 +34,10 @@ define(['path/to/flight-component','path/to/flight-router'], function(defineComp
                 '/help?get=something&andMore=something:dotted'
             ]
             this.on('click', function() {
-                this.navigate(index[counter]);
+		if (counter > index.length) {
+		    counter = 0;
+		}
+	        this.navigate(index[counter]);
                 counter++;
             });
         });
